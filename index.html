@@ -12,33 +12,52 @@
         }
 
         .loser {
-            color: red
+            color: red;
         }
 
         ::-webkit-scrollbar {
             display: none;
-
-            #foot {
-                max-height: 10px;
-            }
         }
 
         .button {
+            width: fit-content;
+            margin: 0.5rem 0;
+            min-width: fit-content;
+        }
+
+        .flex {
             display: flex;
-            /* max-width: fit-content; */
+            flex-direction: column;
+            align-items: center;
+
         }
 
         .card-footer {
             display: flex;
-            justify-content: space-around;
-            border-top: none;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+
+        @media (min-width: 768px) {
+            .flex {
+                flex-direction: row;
+                justify-content: space-around;
+
+            }
+
+            .button {
+                max-width: fit-content;
+            }
+        }
+
+        .container {
+            width: auto;
         }
     </style>
 </head>
 
-
 <body>
-    <div class="container">
+    <div class="container ">
         <div class="column ">
             <div class="column is-half is-offset-one-quarter">
                 <div class="card ">
@@ -58,11 +77,10 @@
                     <div class="card-content">
                         <div class="content">
                             <h1 class="title is-1"><span id="p1Display">0</span> to <span id="p2Display">0</span></h1>
-                            <p class="subtitle"> use the buttons below to keep the score</p>
+                            <p class="subtitle"> Use the buttons below to keep the score</p>
                             <label for="playto" class="label is-large is-inline">PLAY TO</label>
                             <div class="select is-rounded">
                                 <select name="" id="playto">
-
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -73,26 +91,24 @@
                                     <option value="8">8</option>
                                     <option value="9">9</option>
                                     <option value="10">10</option>
-                                    <option value="11">11 </option>
+                                    <option value="11">11</option>
                                 </select>
+
                             </div>
+                            <footer class="card-footer flex">
+                                <button class="is-primary button card-footer-item is-medium" id="p1Button">+1 Player
+                                    One</button>
+                                <button class="is-info button card-footer-item is-medium" id="p2Button">+1 Player
+                                    Two</button>
+                                <button class="is-warning button card-footer-item is-medium" id="reset">RESET</button>
+                            </footer>
                         </div>
                     </div>
-                    <footer class="card-footer">
-                        <button class="is-primary button card-footer-item is-medium" id="p1Button">+1 player
-                            one</button>
-                        <button class="is-info button card-footer-item is-medium" id="p2Button">+1 player
-                            two</button>
-                        <button class="is-warning button card-footer-item is-medium" id="reset">RESET</button>
-
 
                 </div>
             </div>
         </div>
     </div>
-
-
-
 
     <script src="app.js"></script>
 </body>

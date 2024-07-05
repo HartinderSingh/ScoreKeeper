@@ -20,18 +20,38 @@
         }
 
         .card-footer {
+            min-width: none;
             display: flex;
             justify-content: space-evenly;
             flex-wrap: wrap;
             align-content: space-around;
+
         }
+
 
         .button {
             width: max-content;
+            flex-grow: 1;
         }
 
         .column {
             padding: none;
+            margin: none;
+        }
+
+        .container {
+            padding: none;
+            margin: none;
+            margin-top: 5vh;
+        }
+
+
+        @media (max-width: 360px) {
+
+            .button {
+                min-width: 150px;
+                display: block;
+            }
         }
     </style>
 </head>
@@ -80,12 +100,13 @@
                             </div>
                         </div>
                     </div>
-                    <footer class="card-footer  ">
+                    <footer class="card-footer ">
                         <button class="is-primary button card-footer-item is-medium" id="p1Button">+1 player
                             one</button>
                         <button class="is-info button card-footer-item is-medium" id="p2Button">+1 player
                             two</button>
                         <button class="is-warning button card-footer-item is-medium" id="reset">RESET</button>
+
 
 
                 </div>
